@@ -5,12 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 User.destroy_all
 Game.destroy_all
 Comment.destroy_all
 
-User.create(username: "Deka", email: "dekadekadeka@gmail.com")
+20.times do
+    User.create(username: Faker::TvShows::RuPaul.queen, email: "dekadekadeka@gmail.com")
+end
 
-Game.create(user_id: User.last.id, score: 26)
+30.times do
+    Game.create(user_id: User.all.sample.id, score: 26)
+end
 
-Comment.create(content: "You suck", user_id: User.last.id, game_id: Game.last.id)
+50.times do
+    Comment.create(content: Faker::TvShows::Seinfeld.quote, user_id: User.all.sample.id, game_id: Game.all.sample.id)
+end
