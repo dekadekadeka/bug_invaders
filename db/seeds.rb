@@ -11,11 +11,11 @@ Game.destroy_all
 Comment.destroy_all
 
 20.times do
-    User.create(username: Faker::TvShows::RuPaul.queen, email: "dekadekadeka@gmail.com")
+    User.create(username: Faker::FunnyName.two_word_name, email: Faker::Internet.free_email)
 end
 
 30.times do
-    Game.create(user_id: User.all.sample.id, score: 26)
+    Game.create(user_id: User.all.sample.id, score: rand(100))
 end
 
 50.times do
