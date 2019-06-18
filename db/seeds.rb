@@ -14,10 +14,10 @@ Comment.destroy_all
     User.create(username: Faker::FunnyName.two_word_name, email: Faker::Internet.free_email)
 end
 
-30.times do
+75.times do
     Game.create(user_id: User.all.sample.id, score: rand(100))
 end
 
-50.times do
+100.times do
     Comment.create(content: Faker::TvShows::Seinfeld.quote, user_id: User.all.sample.id, game_id: Game.all.sample.id)
 end
