@@ -15,7 +15,7 @@ Comment.destroy_all
 end
 
 75.times do
-    Game.create(user_id: User.all.sample.id, score: rand(100))
+    Game.create(user_id: User.all.sample.id, score: rand(500))
 end
 
 100.times do
